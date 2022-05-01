@@ -28,14 +28,14 @@ export default function ModalReservation({ restName }) {
     const [valueDate, setValueDate] = React.useState(new Date())
 
     const [reservationComplete, setReservationComplete] = React.useState(false)
-    const [reservation, setReservation] = React.useState({
+    const reservation = {
         name: "",
         email: "",
         number: "",
         restaurantname: restName,
         partysize: "1",
         datetime: valueDate
-    })
+    }
     // const handleChange = (prop) => (event) => {
     //     setReservation({...reservation, [prop]: event.target.value})
     // }
