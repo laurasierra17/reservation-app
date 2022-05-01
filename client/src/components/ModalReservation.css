@@ -1,0 +1,18 @@
+.form--modal {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+.form--modal h2 {
+    margin: 0;
+}
+.form--modal .field {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 0.5em
+}
+.form--modal .button {
+    margin-top: 2em;
+    padding: 1em;
+}
