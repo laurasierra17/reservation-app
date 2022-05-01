@@ -17,7 +17,7 @@ export default function LandingPage() {
     
     // fetch Restaurants information from the database
     React.useEffect(() => {
-        Axios.get("http://localhost:3001/").then((response) => {
+        Axios.get("https://reservation-app-deploy.herokuapp.com/").then((response) => {
             setRestaurantList(response.data)
         })
     }, [])

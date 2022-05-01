@@ -42,7 +42,7 @@ export default function ModalReservation({ restName }) {
 
     // const [reservationList, setReservationList] = React.useState([])
     const createReservation = (data) => {
-        Axios.post('http://localhost:3001/create', {
+        Axios.post('https://reservation-app-deploy.herokuapp.com/create', {
             name: data.name,
             email: data.email,
             number: data.number,

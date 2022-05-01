@@ -7,12 +7,14 @@ const cors = require('cors')
 app.use(cors())
 app.use(express.json())
 
+const PORT = 3001
+
 // database
 const db = mysql.createConnection({
-    user: 'root',
-    host: 'localhost',
-    password: '',
-    database: 'restaurants_workbench'
+    user: 'bf4596c455a2d7',
+    host: 'us-cdbr-east-05.cleardb.net',
+    password: 'b26fd636',
+    database: 'heroku_df94b82b09ad7e6'
 })
 
 // to insert stuff into our database
@@ -39,8 +41,8 @@ app.post('/create', (req,res) => {
 // get list of restaurants from database
 app.get('/', (req, res) => {
     db.query("SELECT * FROM restaurants", (err, result) => {
-        if (err) throw new Error(err)
-        else res.send(result)
+        // if (err) throw new Error(err)
+        res.send(result)
     })
 })
 
@@ -52,7 +54,7 @@ app.get('/create', (req, res) => {
     })
 })
 
-// port, is it running or not
-app.listen(3001, () => {
-    console.log("server is running in port 3001")
+// port for heroku
+app.listen(process.env.PORT || PORT, () => {
+    console.log(`server is running in port ${PORT}`)
 })

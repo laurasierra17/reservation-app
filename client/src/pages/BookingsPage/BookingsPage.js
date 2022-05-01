@@ -7,7 +7,7 @@ export default function BookingsPage() {
     const [bookingsList, setBookingsList] = React.useState([])
 
     React.useEffect(() => {
-        Axios.get("http://localhost:3001/create").then((response) => {
+        Axios.get("https://reservation-app-deploy.herokuapp.com/create").then((response) => {
             setBookingsList(response.data)
         })
     }, [])
